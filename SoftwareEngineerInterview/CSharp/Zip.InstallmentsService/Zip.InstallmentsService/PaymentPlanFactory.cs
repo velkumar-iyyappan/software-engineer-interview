@@ -1,9 +1,11 @@
+using Zip.InstallmentsService.Contracts;
+
 namespace Zip.InstallmentsService
 {
     /// <summary>
     /// This class is responsible for building the PaymentPlan according to the Zip product definition.
     /// </summary>
-    public class PaymentPlanFactory
+    public class PaymentPlanFactory: IPaymentPlanFactory
     {
         /// <summary>
         /// Builds the PaymentPlan instance.
