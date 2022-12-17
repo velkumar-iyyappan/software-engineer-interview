@@ -6,7 +6,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zip.InstallmentsService", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zip.InstallmentsService.Test", "Zip.InstallmentsService.Test\Zip.InstallmentsService.Test.csproj", "{DF298FE5-362D-44BD-AD57-7DFC04CEB8B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zip.InstallmentsServiceApi", "Zip.InstallmentsServiceApi\Zip.InstallmentsServiceApi.csproj", "{88237E5F-D731-4CED-A649-0E1B4E6FD8AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zip.InstallmentsServiceApi", "Zip.InstallmentsServiceApi\Zip.InstallmentsServiceApi.csproj", "{88237E5F-D731-4CED-A649-0E1B4E6FD8AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zip.Installments.DataAccess", "Zip.Installments.DataAccess\Zip.Installments.DataAccess.csproj", "{DDA11392-45EE-46A9-85DA-4CABEE0072CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,18 @@ Global
 		{88237E5F-D731-4CED-A649-0E1B4E6FD8AD}.Release|x64.Build.0 = Release|Any CPU
 		{88237E5F-D731-4CED-A649-0E1B4E6FD8AD}.Release|x86.ActiveCfg = Release|Any CPU
 		{88237E5F-D731-4CED-A649-0E1B4E6FD8AD}.Release|x86.Build.0 = Release|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Debug|x64.Build.0 = Debug|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Debug|x86.Build.0 = Debug|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Release|x64.ActiveCfg = Release|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Release|x64.Build.0 = Release|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Release|x86.ActiveCfg = Release|Any CPU
+		{DDA11392-45EE-46A9-85DA-4CABEE0072CC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

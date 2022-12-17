@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Zip.InstallmentsService.Contracts;
 
 namespace Zip.InstallmentsService
@@ -12,10 +14,24 @@ namespace Zip.InstallmentsService
         /// </summary>
         /// <param name="purchaseAmount">The total amount for the purchase that the customer is making.</param>
         /// <returns>The PaymentPlan created with all properties set.</returns>
-        public PaymentPlan CreatePaymentPlan(decimal purchaseAmount)
+        public PaymentPlan CreatePaymentPlan(PaymentPlanRequest paymentPlanRequest)
         {
             // TODO
-            return new PaymentPlan();
+
+            var installmentAmount = paymentPlanRequest.PurchaseAmount / paymentPlanRequest.Installments;
+            var installments = new List<Installment>();            
+            for (int i =1; i<= paymentPlanRequest.Installments;i++)
+            {
+                installments.Add(new Installment() 
+                { Amount = installmentAmount , 
+                    Id= new System.Guid(),
+                    DueDate = DateTime.Now.AddDays(paymentPlanRequest.FrequencyDays*(i-1))});
+            }
+
+            return new PaymentPlan() { 
+                Id = new Guid(), 
+                Installments = installments.ToArray(), 
+                PurchaseAmount = paymentPlanRequest.PurchaseAmount};
         }
     }
 }

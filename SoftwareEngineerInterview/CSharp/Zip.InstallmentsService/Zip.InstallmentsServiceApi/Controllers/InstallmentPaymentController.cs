@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Zip.InstallmentsService;
 using Zip.InstallmentsService.Contracts;
 
 namespace Zip.InstallmentsServiceApi.Controllers
@@ -13,18 +14,24 @@ namespace Zip.InstallmentsServiceApi.Controllers
     };
 
         private readonly ILogger<InstallmentPaymentController> _logger;
-        private readonly IPaymentPlanFactory paymentPlanFactory;
+        private readonly IPaymentPlanFactory _paymentPlanFactory;
 
-        public InstallmentPaymentController(ILogger<InstallmentPaymentController> logger)
+        public InstallmentPaymentController(ILogger<InstallmentPaymentController> logger, IPaymentPlanFactory paymentPlanFactory)
         {
             _logger = logger;
+            _paymentPlanFactory = paymentPlanFactory;
+
         }
 
         [HttpGet(Name = "GetInstallmentPaymentPlan")]
-        public IEnumerable<PaymentPlan> Get()
+        public ActionResult<PaymentPlan> Get(decimal purchaseAmount, int installments, int frequencyDays)
         {
+            var paymentplan = _paymentPlanFactory.CreatePaymentPlan(
+                new InstallmentsService.PaymentPlanRequest()
+                { PurchaseAmount = purchaseAmount, Installments = installments, FrequencyDays = frequencyDays });
+                       
 
-            return new List<PaymentPlan>();
+            return  paymentplan;
             //return Enumerable.Range(1, 5).Select(index => new PaymentPlan
             //{
             //    Date = DateTime.Now.AddDays(index),

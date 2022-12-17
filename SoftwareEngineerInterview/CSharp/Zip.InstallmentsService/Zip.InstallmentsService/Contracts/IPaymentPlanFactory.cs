@@ -8,5 +8,6 @@ namespace Zip.InstallmentsService.Contracts
 {
     public  interface IPaymentPlanFactory
     {
+        public PaymentPlan CreatePaymentPlan(PaymentPlanRequest paymentPlanRequest);
     }
 }
